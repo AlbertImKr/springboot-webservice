@@ -1,7 +1,7 @@
 package com.springbootwebservice.web;
 
 
-import com.springbootwebservice.web.dto.HelloResponseDto;
+import com.springbootwebservice.web.dto.HelloResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +14,7 @@ public class HelloController {
     }
 
     @GetMapping("/hello/dto")
-    public HelloResponseDto helloDto(String name, int amount) {
-        return new HelloResponseDto(name, amount);
+    public HelloResponse helloDto(String name, int amount) {
+        return new HelloResponse(name, amount);
     }
 }
