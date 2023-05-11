@@ -1,5 +1,7 @@
 package com.springbootwebservice.web;
 
+import com.springbootwebservice.config.auth.LoginUser;
+import com.springbootwebservice.config.auth.dto.SessionUser;
 import com.springbootwebservice.service.posts.PostService;
 import com.springbootwebservice.web.dto.PostResponse;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +17,12 @@ public class IndexController {
     private final PostService postService;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postService.findAllDesc());
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
