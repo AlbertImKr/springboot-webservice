@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - amazoncorretto:11
+  - amazoncorretto11
 
 branches:
   only:
