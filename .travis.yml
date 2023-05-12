@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk11
+  - aws-corretto-11
 
 branches:
   only:
