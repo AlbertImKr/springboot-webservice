@@ -33,6 +33,8 @@ chmod +x $JAR_NAME
 
 echo "> $JAR_NAME 실행"
 
+source ~/.bashrc
+
 nohup java -jar \
     -Dspring.config.location=classpath:/application.properties,classpath:/application-real.properties,/home/ec2-user/app/application-oauth.properties,/home/ec2-user/app/application-real-db.properties \
     -Dspring.profiles.active=real \
